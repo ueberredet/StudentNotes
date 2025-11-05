@@ -21,6 +21,7 @@ function loadNotes(category = 'alle') {
         notesList.appendChild(li); //listenelement hinzufügen zur notizenliste
       });
     })
+ 
 }
 
 // eventlistener für kategorien

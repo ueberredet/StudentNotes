@@ -2,63 +2,63 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>Notiz hochladen</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Notizen Hochladen</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <div class="navbar">
-  <a href="index.html">Vorhandene Notizen</a>
-  <a href="upload.html">Neue Notiz</a>
-<div class="dropdown">
-  <button class="dropbtn">Kategorien</button>
-  <div class="dropdown-content">
-    <a href="index.html" data-category="alle">Alle</a>
-    <a href="index.html" data-category="programmieren">Programmieren</a>
-    <a href="index.html" data-category="softwareengineering">Softwareengineering</a>
-    <a href="index.html" data-category="bwl">BWL</a>
-    <a href="index.html" data-category="grundlagenIT">Grundlagen der IT</a>
-    <a href="index.html" data-category="recht">Recht</a>
-    <a href="index.html" data-category="marketing">Marketing</a>
-    <a href="index.html" data-category="mathe">Mathe</a>
-    <a href="index.html" data-category="mckinsey">McKinsey</a>
-  </div>
-</div> 
-  <div class="navbar-form navbar-left" action="/action_page.php">
-      <div class="form-group">
-        <input type="text" class="form-control" placeholder="Datei suchen">
-        <button type="submit" class="btn btn-default">Suchen</button> <!-- Suchen nach bestimmter Datei. UNFERTIG --> 
+  <header class="navbar">
+    <img src="/images.png" alt="Logo" class="navbar-logo">
+    <nav class="nav-links" aria-label="Hauptnavigation">
+      <a href="index.html">Vorhandene Notizen</a>
+      <a href="upload.html">Neue Notiz</a>
+      <div class="dropdown">
+        <button class="dropbtn">Kategorien ▾</button>
+        <div class="dropdown-content">
+          <a href="index.html" data-category="alle">Alle</a>
+          <a href="index.html" data-category="programmieren">Programmieren</a>
+          <a href="index.html" data-category="softwareengineering">Softwareengineering</a>
+          <a href="index.html" data-category="bwl">BWL</a>
+          <a href="index.html" data-category="grundlagenIT">Grundlagen der IT</a>
+          <a href="index.html" data-category="recht">Recht</a>
+          <a href="index.html" data-category="marketing">Marketing</a>
+          <a href="index.html" data-category="mathe">Mathe</a>
+          <a href="index.html" data-category="mckinsey">McKinsey</a>
+        </div>
       </div>
-    </div>
-    
-</div>
+    </nav>
+  </header>
 
-  <h1>Notiz hochladen</h1>
-<form action="/upload" method="POST" enctype="multipart/form-data">
-  <label>Titel:</label>
-  <input type="text" name="title" required><br>
+   <main class="container">
+    <h1>Notiz hochladen</h1>
+    <form class="card form-card" action="/upload" method="POST" enctype="multipart/form-data">
+      <label for="title">Titel:</label>
+      <input id="title" type="text" name="title" required>
 
-  <label>Hochgeladen von:</label>
-  <input type="text" name="uploader" required><br>
+      <label for="uploader">Hochgeladen von:</label>
+      <input id="uploader" type="text" name="uploader" required>
 
- <label>Kurs / Kategorie:</label>
-  <select name="category" required>
-    <option value="">Alle</option>
-    <option value="mathe">Mathe</option>
-    <option value="programmieren">Programmieren</option>
-    <option value="grundlagenIT">Grundlagen IT</option>
-    <option value="softwareengineering">Softwareengineering</option>
-    <option value="bwl">BWL</option>
-    <option value="recht">Recht</option>
-    <option value="mckinsey">McKinsey</option>
-  </select><br>
+      <label for="category">Kurs / Kategorie:</label>
+      <select id="category" name="category" required>
+        <option value="">Alle</option>
+        <option value="mathe">Mathe</option>
+        <option value="programmieren">Programmieren</option>
+        <option value="softwareengineering">Softwareengineering</option>
+        <option value="bwl">BWL</option>
+        <option value="recht">Recht</option>
+        <option value="mckinsey">McKinsey</option>
+      </select><br>
 
-  <label>Datei:</label>
-  <input type="file" name="noteFile" required><br><br>
-  <button type="submit">Hochladen</button>
-
-</form>
-  <p><a href="/">Zurück zu den vorhanden Notizen</a></p>
-  
+      <label>Datei:</label>
+        <div class="wrapper">
+          <input id="file" name="noteFile" type="file" required>
+          <label class="btn file-btn" for="file">Datei auswählen</label>
+        </div>
+      <div class="form-actions">
+        <button type="submit" class="btn btn-primary">Hochladen</button>
+        <a class="btn" href="index.html">Zurück</a>
+      </div>
+    </form>
+  </main>  
 </body>
 </html>
