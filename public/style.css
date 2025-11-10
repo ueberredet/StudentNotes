@@ -4,7 +4,6 @@
   --muted: rgba(255,255,255,0.8);
   --glass: rgba(255,255,255,0.06);
   --glass-border: rgba(255,255,255,0.08);
-  --card-bg: rgba(255,255,255,0.9);
   --card-bg-glass: rgba(255, 255, 255, 0.78);
 }
 
@@ -55,15 +54,16 @@ body {
   border: none;
   cursor:pointer;
 }
-.nav-links a:hover, .nav-links a:focus, .dropbtn:hover {
-  color: white;
+.nav-links a:hover, .nav-links a:focus, .dropbtn:hover, .dropbtn:focus-within {
+
   background: linear-gradient(90deg, rgba(255,0,0,0.22), rgba(255,0,0,0.08));
   transform: translateY(-2px);
   box-shadow: 0 6px 14px rgba(0,0,0,0.25);
 }
 
-
-
+.contrastbox {
+  color:white
+}
 
 .dropdown{position:relative;}
 .dropdown-content{
@@ -90,9 +90,13 @@ body {
   transform: scaleY(1);
   opacity: 1;
   display:block;
+
 }
-
-
+.dropdown:focus-within .dropdown-content{
+  transform: scale(1);
+  opacity: 1;
+  display: block;
+}
 .container{
   max-width:980px;
   margin:0 auto;
@@ -103,8 +107,6 @@ body {
   border-radius:12px;
   box-shadow:0 8px 24px rgba(0,0,0,0.25);
 }
-
-
 
 .btn{
   display:inline-block;
@@ -124,12 +126,16 @@ body {
   transform: translateY(-2px);
 }
 
+.file-link:hover{
+  font-weight: bold;
+}
 
-
-
+.hiddenFileUpload{
+  opacity:0;
+  width: 0px;
+}
 .file-link{
   display:inline-block;
-  margin-top:12px;
   color: #b71c1c;
   text-decoration:underline;
 }
@@ -155,12 +161,11 @@ body {
   transform: translateY(-2px);
 }
 
-
-
-.wrapper input[type="file"] {
-  display: none; 
+.hiddenFileUpload:focus-within + .file-btn {
+  box-shadow: 0 6px 14px rgba(181, 28, 28, 0.25);
+  transform: translateY(-2px);
+  outline: auto
 }
-.wrapper{
-  position:relative;
-  display:inline-block;
+.notizenTitel {
+  color:white;
 }

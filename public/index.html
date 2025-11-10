@@ -8,7 +8,7 @@
 </head>
 <body>
   <header class="navbar">
-    <img src="/images.png" alt="Logo" class="navbar-logo">
+    <img src="images.png" alt="StudentNotes Logo" class="navbar-logo">
     <nav class="nav-links" aria-label="Hauptnavigation">
       <a href="index.html">Vorhandene Notizen</a>
       <a href="upload.html">Neue Notiz</a>
@@ -19,7 +19,7 @@
           <a href="#" data-category="programmieren">Programmieren</a>
           <a href="#" data-category="softwareengineering">Softwareengineering</a>
           <a href="#" data-category="bwl">BWL</a>
-          <a href="#" data-category="grundlagenIT">Grundlagen der IT</a>
+          <a href="#" data-category="grundlagen der it">Grundlagen der IT</a>
           <a href="#" data-category="recht">Recht</a>
           <a href="#" data-category="marketing">Marketing</a>
           <a href="#" data-category="mathe">Mathe</a>
@@ -27,9 +27,10 @@
         </div>
       </div>
     </nav>
+    <input type="checkbox"><label class="contrastbox">Contrast</label></input>
   </header>
   <main class="container">
-    <h1>Notizen</h1>
+    <h1 id="notizenTitel" class="notizenTitel"></h1>
     <section class="card">
       <a class="btn btn-primary" href="upload.html">Neue Notiz hochladen</a>
       <h2>Verfügbare Notizen:</h2>

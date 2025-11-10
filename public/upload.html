@@ -8,29 +8,29 @@
 </head>
 <body>
   <header class="navbar">
-    <img src="/images.png" alt="Logo" class="navbar-logo">
+    <img src="images.png" alt="Logo" class="navbar-logo">
     <nav class="nav-links" aria-label="Hauptnavigation">
       <a href="index.html">Vorhandene Notizen</a>
       <a href="upload.html">Neue Notiz</a>
       <div class="dropdown">
         <button class="dropbtn">Kategorien ▾</button>
         <div class="dropdown-content">
-          <a href="index.html" data-category="alle">Alle</a>
-          <a href="index.html" data-category="programmieren">Programmieren</a>
-          <a href="index.html" data-category="softwareengineering">Softwareengineering</a>
-          <a href="index.html" data-category="bwl">BWL</a>
-          <a href="index.html" data-category="grundlagenIT">Grundlagen der IT</a>
-          <a href="index.html" data-category="recht">Recht</a>
-          <a href="index.html" data-category="marketing">Marketing</a>
-          <a href="index.html" data-category="mathe">Mathe</a>
-          <a href="index.html" data-category="mckinsey">McKinsey</a>
+          <a href="#" data-category="alle">Alle</a>
+          <a href="#" data-category="programmieren">Programmieren</a>
+          <a href="#" data-category="softwareengineering">Softwareengineering</a>
+          <a href="#" data-category="bwl">BWL</a>
+          <a href="#" data-category="grundlagen der it">Grundlagen der IT</a>
+          <a href="#" data-category="recht">Recht</a>
+          <a href="#" data-category="marketing">Marketing</a>
+          <a href="#" data-category="mathe">Mathe</a>
+          <a href="#" data-category="mckinsey">McKinsey</a>
         </div>
       </div>
     </nav>
   </header>
 
    <main class="container">
-    <h1>Notiz hochladen</h1>
+    <h1 class="notizenTitel">Notiz hochladen</h1>
     <form class="card form-card" action="/upload" method="POST" enctype="multipart/form-data">
       <label for="title">Titel:</label>
       <input id="title" type="text" name="title" required>
@@ -39,26 +39,26 @@
       <input id="uploader" type="text" name="uploader" required>
 
       <label for="category">Kurs / Kategorie:</label>
-      <select id="category" name="category" required>
-        <option value="">Alle</option>
+      <select id="category" name="category">
+        <option value="alle">Alle</option>
         <option value="mathe">Mathe</option>
         <option value="programmieren">Programmieren</option>
         <option value="softwareengineering">Softwareengineering</option>
+        <option value="grundlagen der it">Grundlagen der IT</option>
         <option value="bwl">BWL</option>
         <option value="recht">Recht</option>
         <option value="mckinsey">McKinsey</option>
       </select><br>
 
       <label>Datei:</label>
-        <div class="wrapper">
-          <input id="file" name="noteFile" type="file" required>
-          <label class="btn file-btn" for="file">Datei auswählen</label>
-        </div>
+        <input id="file" name="noteFile" type="file" class="hiddenFileUpload" required>
+        <label class="btn file-btn" for="file">Datei auswählen</label>
       <div class="form-actions">
         <button type="submit" class="btn btn-primary">Hochladen</button>
-        <a class="btn" href="index.html">Zurück</a>
+        <a class="file-link" href="index.html">Zurück</a>
       </div>
     </form>
   </main>  
+  <script src="main.js"></script>
 </body>
 </html>
