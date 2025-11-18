@@ -35,7 +35,13 @@ function loadNotes(category = currentCategory) {
       }
     });
 }
-
+const submitLogin = document.getElementById('submitLogin')
+if (submitLogin) {
+  submitLogin.addEventListener('click', (e) => {
+    e.preventDefault;
+    console.log("hallo der scheiß geht")
+  })
+}
 
 document.addEventListener('DOMContentLoaded', () => {
 

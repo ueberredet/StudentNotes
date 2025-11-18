@@ -3,10 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <title>Notizen</title>
-  
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <h1>Login</h1>
-    <input type="text" id="loginname">
-    <input type="password" id="passwort">
+  <header class="navbar">
+    <img src="images.png" alt="StudentNotes Logo" class="navbar-logo">
+    <nav class="nav-links" aria-label="Hauptnavigation">
+      <a href="login.html">login</a>
+      <a href="index.html">Vorhandene Notizen</a>
+      <a href="upload.html">Neue Notiz</a>
+      <div class="dropdown">
+        <button class="dropbtn">Kategorien ▾</button>
+        <div class="dropdown-content">
+          <a href="#" data-category="alle">Alle</a>
+          <a href="#" data-category="programmieren">Programmieren</a>
+          <a href="#" data-category="softwareengineering">Softwareengineering</a>
+          <a href="#" data-category="bwl">BWL</a>
+          <a href="#" data-category="grundlagen der it">Grundlagen der IT</a>
+          <a href="#" data-category="recht">Recht</a>
+          <a href="#" data-category="marketing">Marketing</a>
+          <a href="#" data-category="mathe">Mathe</a>
+          <a href="#" data-category="mckinsey">McKinsey</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main>
+  <div class="logincard">
+    <label for="username">Username</label>
+    <input type="text" placeholder="Enter Username" name="username" required>
+    <label for="password">Password</label>
+    <input type="password" placeholder="Enter Password" name="password" required>
+    <button type="submit" id="submitLogin">Login</button>
+  </div>
+  </main>
+  <script src="main.js" ></script>
 </body>
