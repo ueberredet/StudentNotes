@@ -39,12 +39,11 @@ const submitLogin = document.getElementById('submitLogin')
 if (submitLogin) {
   submitLogin.addEventListener('click', (e) => {
     e.preventDefault;
-    console.log("hallo der scheiß geht")
+    console.log('Login funktionabel')
   })
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-
   if (notesList) {
     loadNotes(currentCategory);
   }
