@@ -1,16 +1,14 @@
 
-
-document.getElementById('signup').addEventListener('submit', () => {
-
+function newSignUp() {
     const password = document.getElementById('password').value;
     const username = document.getElementById('username').value;
-    if (!username || !password) {
+        if (!username || !password) {
         alert("Username and Password required");
         return;
     }
-
-    const users = JSON.parse(localStorage.getItem('users')) || [];
-    users.push({ username, password });
-    localStorage.setItem('users', JSON.stringify(users));
     alert('User signed up successfully!');
+}
+
+document.getElementById('signup').addEventListener('submit', () => {
+    newSignUp();    
 })

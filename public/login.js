@@ -1,4 +1,8 @@
-
+function checkLogin(username, password) {
+    if (username === users.username || password === users.password) {
+        alert("login hat gefunzt!")
+    }
+}
 
 document.getElementById('loginform').addEventListener('submit', () => {
 
@@ -8,7 +12,5 @@ document.getElementById('loginform').addEventListener('submit', () => {
         alert("Username and Password required");
         return;
     }
-    
-    const users = JSON.parse(localStorage.getItem('users')) || [];
-    alert('User logged in successfully!');
+    checkLogin(username, password);
 })

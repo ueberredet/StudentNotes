@@ -7,10 +7,22 @@ const app = express();
 const PORT = 3000;
 const upload = multer({ dest: 'uploads/' });
 const NOTES_FILE = './data/notes.json';
-
+const USERS_FILE = './data/users.json';
 
 app.use(express.static('public'));
 
+app.post('/signup',upload.single('userFile'), (req,res) => {
+  const {username,password} = req.body;
+  const users = JSON.parse(fs.readFileSync(USERS_FILE))
+  const newUser = {
+    id: Date.now(),
+    username,
+    password
+  };
+  users.push(newUser);
+  fs.writeFileSync(USERS_FILE, JSON.stringify(users, null, 2));
+  res.redirect('/')
+});
 app.post('/upload', upload.single('noteFile'), (req, res) => {
   const { title, uploader, category } = req.body; 
   const file = req.file;
@@ -30,8 +42,6 @@ app.post('/upload', upload.single('noteFile'), (req, res) => {
   res.redirect('/');
 });
 
-
-{ 
 app.get('/notes', (req, res) => {
   const allNotes = JSON.parse(fs.readFileSync(NOTES_FILE));
   const category = req.query.category;
@@ -41,7 +51,7 @@ app.get('/notes', (req, res) => {
 
   res.json(notes);
 });
-}
+
 
 
 app.get('/download/:id', (req, res) => {

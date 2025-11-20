@@ -9,16 +9,16 @@
 <body>
   
   <main>
-    <form id="signup">
+    <form id="signup" action="/signup" method="POST" enctype="multipart/form-data">
     <div class="login-wrapper">
       <h1 class="login-input">Sign Up</h1>
       <div class="login-input">
         <lable for="username">Username</lable>
-        <input type="text" placeholder="Enter Username" id="username" name="username">
+        <input type="text" placeholder="Enter Username" id="username" name="username" required>
       </div>
       <div class="login-input">
         <lable for="password">Password</lable>
-        <input type="password" name="password" placeholder="Enter Password" id="password">
+        <input type="password" name="password" placeholder="Enter Password" id="password" required>
       </div>
     <div class="login-input">
       <button type="submit" class="submitbtn" id="submitLogin">Submit</button>
