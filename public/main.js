@@ -37,20 +37,8 @@ function loadNotes(category = currentCategory) {
 }
 const submitLogin = document.getElementById('submitLogin');
 
-if (submitLogin) {
-  submitLogin.addEventListener('click', (e) => {
-    e.preventDefault;
-    if (document.getElementById('username').value && document.getElementById('password').value) {
-      sessionStorage.setItem('username',document.getElementById('username').value)
-      sessionStorage.setItem('password',document.getElementById('password').value)
-      sessionStorage.setItem('loginState', true);
-      console.log("login");
-    }  
-  })
-}
-if (sessionStorage.getItem('loginState', true)) {
- 
-}
+
+
 document.addEventListener('DOMContentLoaded', () => {
   if (notesList) {
     loadNotes(currentCategory);
