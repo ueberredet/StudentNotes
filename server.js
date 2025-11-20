@@ -23,6 +23,12 @@ app.post('/signup',upload.single('userFile'), (req,res) => {
   fs.writeFileSync(USERS_FILE, JSON.stringify(users, null, 2));
   res.redirect('/')
 });
+app.get('/login', (req,res) => {
+  const users = JSON.parse(fs.readFileSync(USERS_FILE));
+  const user = users.find(u => u.username === username && u.password === password);
+
+  console.log(user, "der scheiß geht nicht")
+})
 app.post('/upload', upload.single('noteFile'), (req, res) => {
   const { title, uploader, category } = req.body; 
   const file = req.file;
