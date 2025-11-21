@@ -33,16 +33,16 @@
 
 
   <main>
-    <form id="loginform" action="/login" method="GET">
+    <form id="loginform" action="/login" method="POST">
     <div class="login-wrapper">
       <h1 class="login-input">LOGIN</h1>
       <div class="login-input">
-        <lable>Username</lable>
-        <input type="text" placeholder="Enter Username" id="username" name="username">
+        <label>Username</label>
+        <input type="text" placeholder="Enter Username" id="username" name="username" required>
       </div>
       <div class="login-input">
-        <lable>Password</lable>
-        <input type="password" name="username" placeholder="Enter Password" id="password">
+        <label>Password</label>
+        <input type="password" name="password" placeholder="Enter Password" id="password" required>
       </div>
     <div class="login-input">
       <button type="submit" class="submitbtn" id="submitLogin">Submit</button>
@@ -50,5 +50,4 @@
     </div>
     </form>
   </main>
-  <script src="login.js"></script>
 </body>

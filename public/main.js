@@ -4,6 +4,7 @@ const notizenTitel = document.getElementById('notizenTitel');
 
 let currentCategory = localStorage.getItem('selectedCategory') || "";
 
+
 function loadNotes(category = currentCategory) {
   fetch(`/notes?category=${category}`)
     .then(res => res.json())
