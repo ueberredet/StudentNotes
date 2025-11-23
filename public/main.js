@@ -28,7 +28,7 @@ function showLogin() {
   const userVariable = document.getElementById('userVariable');
   const username = localStorage.getItem('username');
   if (username) {
-    userVariable.textContent = username;
+    userVariable.textContent = "Hallo "+username;
   } else {
     userVariable.textContent = 'Gast';
   }

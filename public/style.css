@@ -191,3 +191,20 @@ body {
   align-items:center;
 }
 
+#signupQuestion {
+  border-radius: 10px;
+  border: var(--glass-border);
+  background: var(--card-bg-glass);
+  margin-left: 20rem;
+   margin-right: 20rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#signupQuestion:hover{
+  font-weight: bold;
+}
+
+#userVariable {
+  color: white;
+}

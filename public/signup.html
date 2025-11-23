@@ -7,7 +7,29 @@
 </head>
 
 <body>
-  
+  <header class="navbar">
+    <img src="images.png" alt="StudentNotes Logo" class="navbar-logo">
+    <nav class="nav-links" aria-label="Hauptnavigation">
+      <a href="login.html">Login</a>
+      <a href="index.html">Vorhandene Notizen</a>
+      <a href="upload.html">Neue Notiz</a>
+      <div class="dropdown">
+        <button class="dropbtn">Kategorien ▾</button>
+        <div class="dropdown-content">
+          <a href="#" data-category="alle">Alle</a>
+          <a href="#" data-category="programmieren">Programmieren</a>
+          <a href="#" data-category="softwareengineering">Softwareengineering</a>
+          <a href="#" data-category="bwl">BWL</a>
+          <a href="#" data-category="grundlagen der it">Grundlagen der IT</a>
+          <a href="#" data-category="recht">Recht</a>
+          <a href="#" data-category="marketing">Marketing</a>
+          <a href="#" data-category="mathe">Mathe</a>
+          <a href="#" data-category="mckinsey">McKinsey</a>
+        </div>
+      </div>
+    </nav>
+    
+  </header>
   <main>
     <form id="signup" action="/signup" method="POST" enctype="multipart/form-data">
     <div class="login-wrapper">
@@ -25,5 +47,8 @@
     </div>
     </div>
     </form>
+      <div id="signupQuestion">
+    <a href="login.html"> Du hast schon einen Account? | Login</a>
+    </div>
   </main>
 </body>
