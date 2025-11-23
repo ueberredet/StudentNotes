@@ -1,10 +1,43 @@
 const notesList = document.getElementById('notes-list');
 const categoryLinks = document.querySelectorAll('.dropdown-content a');
 const notizenTitel = document.getElementById('notizenTitel');
-
 let currentCategory = localStorage.getItem('selectedCategory') || "";
 
 
+const loginForm = document.getElementById('loginform');
+if (loginForm) {
+  loginForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+    const res = await fetch('/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ username, password })
+    });
+    const data = await res.json();
+    if (data.success) {
+      localStorage.setItem('username', data.user.username);
+      window.location.href = '/';
+    } else {
+      alert('Login fehlgeschlagen');
+    }
+  });
+}
+function showLogin() {
+  const userVariable = document.getElementById('userVariable');
+  const username = localStorage.getItem('username');
+  if (username) {
+    userVariable.textContent = username;
+  } else {
+    userVariable.textContent = 'Gast';
+  }
+}
+showLogin();
+function logout() {
+  localStorage.removeItem('username');
+  window.location.reload();
+}
 function loadNotes(category = currentCategory) {
   fetch(`/notes?category=${category}`)
     .then(res => res.json())
