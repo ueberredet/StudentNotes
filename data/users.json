@@ -18,5 +18,15 @@
     "id": 1763752415778,
     "username": "Lord",
     "password": "admin"
+  },
+  {
+    "id": 1764255235341,
+    "username": "admin",
+    "password": "admin"
+  },
+  {
+    "id": 1764605275608,
+    "username": "max",
+    "password": "lord"
   }
 ]
